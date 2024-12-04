@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airlangga Life and Mood Assistant</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="Logo">
+        <a href=""><img src="asset/ALMA.png" class="logo"/></a>
+      </div>
+
+        <ul class="Menu">
+          <li class="Menu-content">
+            <a href="Dashboard.html" class="Menu-item">Dashboard</a>
+            <a href="Assistant.html" class="Menu-item">Assistant</a>
+            <a href="Treatment.html" class="Menu-item">Treatment</a>
+            <a href="Contact.html" class="Menu-item">Contact</a>
+            <button class="btn-sign-in" onclick="showformsignin()">Sign In</button>
+            <button class="btn-sign-up" onclick="showformsignup()">Sign Up</button>
+          </li>
+        </ul>
+  </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <ul>
+        <li>How is your feeling today?</li>
+        <span class="emotion">
+            <button class="happy" onclick="showformhappy()"></button>
+            <button class="sad" onclick="showformsad()"></button>
+            <button class="scare" onclick="showformscare()"></button>
+            <button class="shock" onclick="showformshock()"></button>
+            <button class="angry" onclick="showformangry()"></button>
+            <button class="disgust" onclick="showformdisgust()"></button>
+        </span>
+      </ul>
+    </div>
+    <!-- Features -->
+    <div class="features">
+      <div class="mood-tracker">
+        <div class="icon-mt"><img src="asset/icon-mt.png"></div>
+        <h2>Mood Tracker</h2>
+        <p>Mood tracker is a tool that helps people record their emotions at regular intervals to identify patterns in how their mood changes over time. Mood trackers can help people understand what triggers their emotions and how their environment, stress, and activities affect them.</p>
+      </div>
+      <div class="journaling">
+        <div class="icon-mt"><img src="asset/icon-journal.png"></div>
+        <h2>Journaling</h2>
+        <p>Journaling is the practice of writing down your thoughts, feelings, and experiences. Journaling can help you understand your emotions, gain control of them, and improve your mental health. It can be especially helpful if you're struggling with stress, depression, or anxiety. 
+        </p>
+      </div>
+    </div>
+
+    <div class="features2">
+      <div class="treatment">
+        <div class="icon-t"><img src="asset/icon-t.png"></div>
+        <h2>Treatment</h2>
+        <p>Treatment is a professional service that aims to alleviate or remedy a person's mental illness. In this features Alma will help you to overcome the emotional problems you are experiencing</p>
+      </div>
+    </div>
+
+    <!-- SIGNUP -->
+    <div class="form_signup" id="form_signup">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <h4 class="tittle">SIGN UP</h4>
+      <form action="#">
+        <div class="form_content">
+          <label for="email" class="sub_tittle">Email</label>
+          <input type="email" class="form_input" id="email"
+          placeholder="Enter your email">
+        </div>
+        <div class="form_content">
+          <label for="password" class="sub_tittle">New Password</label>
+          <input type="password" class="form_input" id="password"
+          placeholder="Create your password">
+        </div>
+        <div class="form_content">
+          <label for="confirm password" class="sub_tittle">Confirm Password</label>
+          <input type="confirm password" class="form_input" id="confirm password"
+          placeholder="Confirm your password">
+        </div>
+          <button class="btn_sign_up">SIGN UP</button>
+          <div class="link_sign_in" >Already have an account?<a href="" id="lgn_sign_in">Sign in</a></div>
+        </div>
+      </form>
+    </div>
+    <!-- SIGN IN -->
+    <div class="form_signin" id="form_signin">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <h4 class="tittle">SIGN IN</h4>
+      <form action="#">
+        <div class="form_content">
+          <label for="name" class="sub_tittle">Name</label>
+          <input type="text" class="form_input" id="name"
+          placeholder="Enter your name">
+        </div>
+        <div class="form_content">
+          <label for="email" class="sub_tittle">Email</label>
+          <input type="email" class="form_input" id="email"
+          placeholder="Enter your email">
+        </div>
+        <div class="form_content">
+          <label for="password" class="sub_tittle">Password</label>
+          <input type="password" class="form_input" id="password"
+          placeholder="Enter your password">
+        </div>
+        <div>
+          <button class="btn_sign_in">SIGN IN</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- button select emotion -->
+    <div class="happyform" id="happyform">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <div class="navhappyform">What kind of happy do you feel?</div>
+      <button class="btn_happyform">Satisfied</button>
+      <button class="btn_happyform">Relieved</button>
+      <button class="btn_happyform">Cheerful</button>
+      <button class="btn_happyform">Peacefull</button>
+      <button class="btn_happyform">Proudy</button>
+      <button class="btn_happyform">Fortune</button>
+      <button class="btn_happyform">Grateful</button>
+      <button class="btn_happyform">Enthusiastic</button>
+    </div>
+
+    <div class="sadform" id="sadform">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <div class="navsadform">What kind of sad do you feel?</div>
+      <button class="btn_sadform">Embarrassed</button>
+      <button class="btn_sadform">Vacant</button>
+      <button class="btn_sadform">Disappointed</button>
+      <button class="btn_sadform">Yearning</button>
+      <button class="btn_sadform">Sorrow</button>
+      <button class="btn_sadform">Guilty</button>
+      <button class="btn_sadform">Lonely</button>
+      <button class="btn_sadform">Miserable</button>
+      <button class="btn_sadform">Displaced</button>
+    </div>
+
+    <div class="scareform" id="scareform">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <div class="navscareform">What kind of scare do you feel?</div>
+      <button class="btn_scareform">Horrified</button>
+      <button class="btn_scareform">Nervous</button>
+      <button class="btn_scareform">Anxious</button>
+      <button class="btn_scareform">Langouis</button>
+      <button class="btn_scareform">Warry</button>
+      <button class="btn_scareform">Uncertain</button>
+      <button class="btn_scareform">Helpless</button>
+    </div>
+
+    <div class="shockform" id="shockform">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <div class="navshockform">What kind of shock do you feel?</div>
+      <button class="btn_shockform">Wonder</button>
+      <button class="btn_shockform">Deceived</button>
+      <button class="btn_shockform">Charmed</button>
+    </div>
+    
+    <div class="angryform" id="angryform">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <div class="navangryform">What kind of angry do you feel?</div>
+      <button class="btn_angryform">Envy</button>
+      <button class="btn_angryform">Annoyed</button>
+      <button class="btn_angryform">Hate</button>
+      <button class="btn_angryform">Wrath</button>
+      <button class="btn_angryform">Jealous</button>
+      <button class="btn_angryform">Offended</button>
+    </div>
+
+    <div class="disgustform" id="disgustform">
+      <button class="btn_close" onclick="closeform()">X</button>
+      <div class="navdisgustform">What kind of disgust do you feel?</div>
+      <button class="btn_disgustform">Sick</button>
+      <button class="btn_disgustform">Nausea</button>
+      <button class="btn_disgustform">Uncomfort</button>
+      <button class="btn_disgustform">Bored</button>
+      <button class="btn_disgustform">Tired</button>
+    </div>
+  </main>
+
+
+  <footer>
+    <nav class="footer-nav">
+      <div class="container-footer">
+          <div class="Logo-footer">
+            <a href=""><img src="asset/ALMA.png" class="logo-footer"/>
+            <f>Follow Us</f>
+            <ig href=""><img src="asset/ig.png" class="ig-footer"/></ig>
+            <ngl href=""><img src="asset/ngl.png" class="ngl-footer"/></ngl>
+            <gform href=""><img src="asset/gform.png" class="gform-footer"/></gform>
+            </a>
+          </div>
+
+
+      <div class="row">
+
+      <div class="footer-content">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="Dashboard.html">Dashboard</a></li>
+          <li><a href="Assistant.html">Assistant</a></li>
+          <li><a href="Treatment.html">Treatment</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-content">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="">Mood Tracker</a></li>
+          <li><a href="">Journaling</a></li>
+          <li><a href="">Treatment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-content">
+        <h4>About</h4>
+        <ul>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Cookies Policy</a></li>
+          <li><a href="">Terms of Use</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-content">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="">Emergency</a></li>
+        </ul>
+      </div>
+
+      <c>Airlangga Mood and Life Assistant ©2024 - All Right Reserved</c>
+        </div>
+      </div>
+    </div>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "b30szZXJlLgH6oSLfuRms",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="b30szZXJlLgH6oSLfuRms"
+    domain="www.chatbase.co"
+    defer>
+    </script>
+</body>
+</html>
