@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airlangga Life and Mood Assistant</title>
+    <style>
+      /* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3f51b5;
+}
+
+/* Calendar Heatmap Styling */
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: white;
+  border: 3px solid black;
+  box-shadow: 10px 10px 0px 0px black;
+}
+
+.calendar-header {
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0;
+  color: #000000;
+}
+
+.calendar-date {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.calendar-date:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Emotion Colors */
+.happy {
+  background-color: #ffde59;
+}
+
+.sad {
+  background-color: #5991ff;
+}
+
+.angry {
+  background-color: #ff5959;
+}
+
+.scare {
+  background-color: #8c52ff;
+}
+
+.shock {
+  background-color: #ff914d;
+}
+
+.disgust {
+  background-color: #98bc65;
+}
+
+/* Responsive Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, html {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  border: 2px solid black;
+  border-left: 0px solid;
+  border-right: 0px solid;
+  border-top: 0px solid;
+}
+
+.navbar {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.Logo {
+  display: flex;
+  width: 250px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.logo {
+  width: 150px;
+}
+
+.Logo a:hover {
+  text-decoration: underline;
+}
+
+.Menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  flex-grow: 1;
+}
+
+.Menu-content {
+  font-size: 50px;
+  text-align: center;
+  color: #000000;
+  padding: 40px;
+  list-style: none;
+}
+
+.Menu-item {
+  padding: 40px;
+  text-decoration: none;
+  color: #000;
+}
+
+.Menu a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design for small screens */
+@media (max-width: 768px) {
+  .Logo {
+    width: 200px;
+    justify-content: center;
+  }
+  .logo {
+    width: 120px;
+  }
+  .Menu-content {
+    font-size: 30px;
+    padding: 20px;
+  }
+  #calendar {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .calendar-date {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Logo a {
+    font-size: 18px;
+  }
+  .Menu-content {
+    font-size: 24px;
+    padding: 20px;
+  }
+  #calendar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .calendar-date {
+    height: 40px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="Logo">
+            <a href=""><img src="asset/ALMA.png" class="logo"/></a>
+          </div>
+
+          <ul class="Menu">
+            <li class="Menu-content">Dashboard</li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+      <div id="calendar"></div>
+    </main>
+
+    <script>
+      // Calendar and emotions management
+      const emotions = JSON.parse(localStorage.getItem('emotions')) || {};
+      const emotionColors = {
+        happy: '#ffde59',
+        sad: '#5991ff',
+        angry: '#ff5959',
+        scare: '#8c52ff',
+        shock: '#ff914d',
+        disgust: '#98bc65'
+      };
+  
+      function renderCalendar() {
+        const calendarElement = document.getElementById('calendar');
+        calendarElement.innerHTML = '';
+  
+        const today = new Date();
+        const currentMonth = today.getMonth();
+        const currentYear = today.getFullYear();
+        const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+        const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
+        const totalDaysInMonth = lastDayOfMonth.getDate();
+        const firstDayOfWeek = firstDayOfMonth.getDay();
+  
+        const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        daysOfWeek.forEach(day => {
+          const dayElement = document.createElement('div');
+          dayElement.classList.add('calendar-header');
+          dayElement.textContent = day;
+          calendarElement.appendChild(dayElement);
+        });
+  
+        for (let i = 0; i < firstDayOfWeek; i++) {
+          const emptyDiv = document.createElement('div');
+          calendarElement.appendChild(emptyDiv);
+        }
+  
+        for (let dayCounter = 1; dayCounter <= totalDaysInMonth; dayCounter++) {
+          const dateElement = document.createElement('div');
+          dateElement.classList.add('calendar-date');
+          dateElement.textContent = dayCounter;
+  
+          const dateKey = `${currentYear}-${currentMonth + 1}-${dayCounter}`;
+          if (emotions[dateKey]) {
+            const dominantEmotion = calculateDominantEmotion(emotions[dateKey]);
+            dateElement.style.backgroundColor = emotionColors[dominantEmotion];
+          }
+  
+          dateElement.addEventListener('click', () => handleDateClick(dateKey));
+          calendarElement.appendChild(dateElement);
+        }
+      }
+  
+      function handleDateClick(dateKey) {
+        const selectedEmotions = prompt("Enter emotions (happy, sad, angry, scare, shock, disgust) separated by commas:").split(',');
+        emotions[dateKey] = emotions[dateKey] || [];
+        selectedEmotions.forEach(emotion => {
+          const trimmedEmotion = emotion.trim().toLowerCase();
+          if (emotionColors[trimmedEmotion]) {
+            emotions[dateKey].push(trimmedEmotion);
+          }
+        });
+        localStorage.setItem('emotions', JSON.stringify(emotions));
+        renderCalendar();
+      }
+  
+      function calculateDominantEmotion(emotionList) {
+        const count = {};
+        emotionList.forEach(emotion => {
+          count[emotion] = (count[emotion] || 0) + 1;
+        });
+        return Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
+      }
+  
+      window.onload = renderCalendar;
+    </script>
+     <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '67566a6831b5b3f31cd01b32' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+</body>
+</html>

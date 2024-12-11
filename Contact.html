@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airlangga Life and Mood Assistant</title>
+    <link rel="stylesheet contact" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*, html {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    border: 2px solid black;
+    border-left: 0px solid;
+    border-right: 0px solid;
+    border-top: 0px solid;
+}
+
+.navbar {
+    margin:0 auto;
+}
+
+.Logo {
+    display: flex;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.logo {
+    width: 150px;
+    display: flex;
+}
+.Logo a {
+    text-decoration: none;
+    color: #65BC9A;
+    text-align: center;
+    font-size: 30px;
+    padding-left: 40px;
+    font-weight: bold;
+}
+.Logo a:hover {
+    text-decoration:underline;
+}
+
+.navbar-content {
+    height: 100px;
+    height: 100px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #000000;
+    list-style: none;
+}
+.intro {
+    width: 100%;
+    height: 1020px;
+    background-image: url(asset/mainbgcon.png) !important;
+    background-size:cover;
+}
+.intro ul li {
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    word-spacing: 5px;
+    top: 360px;
+}
+
+
+
+.section {
+    width: 100%;
+    height: 850px;
+    background-image: url(asset/secbgcon.png) !important;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+}
+.contact {
+    background-color: #f6deeb;
+    width: 600px;
+    height: 370px;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: 0px 10px 0px 0px black;
+    top: 220px;
+    left: 70px;
+    justify-content: center;
+}
+.contact-btn:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px black;
+}
+.contact-btn {
+    width: 120px;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+    color: #000000;
+    padding: 10px 20px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0px 0px black;
+}
+.fa-instagram {
+    display: flex;
+    position: relative;
+    top: 130px;
+    left: 50px;
+    color: #000000;
+    display: flex;
+}
+.ig {
+    top: 140px;
+    position: relative;
+    left: 60px;
+    font-size: larger;
+    display: flex;
+}
+
+.fa-location-dot {
+
+    position: relative;
+    top: 220px;
+    right: 150px;
+    color: #000000;
+}
+.loc {
+    top: 210px;
+    position: relative;
+    right:130px;
+    font-size: larger;
+}
+
+
+
+
+.section2 {
+    width: 100%;
+    height: 1050px;
+    background-image: url(asset/secbgcon2.png) !important;
+    background-size:cover;
+    justify-content: center;
+}
+.section2 ul li {
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    word-spacing: 5px;
+    font-weight: bold;
+    top: 200px;
+}
+.content {
+    display: flex;
+    justify-content: center;
+}
+.contact1 {
+    background-color: #f6deeb;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: 0px 10px 0px 0px black;
+    top: 280px;
+    justify-content: center;
+}
+.contact-btn1:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px black;
+}
+.contact-btn1 {
+    width: 120px;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+    color: #000000;
+    padding: 10px 20px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0px 0px black;
+}
+.fa-phone {
+    display: flex;
+    position: relative;
+    top: 150px;
+    left: 50px;
+    color: #000000;
+    display: flex;
+}
+.call1 {
+    width: 10000px;
+    top: 150px;
+    position: relative;
+    left: 60px;
+    font-size:large;
+}
+.loc1 {
+    text-align: justify;
+    background-color: bla;
+    width: 10000px;
+    top: 210px;
+    position: relative;
+    right:130px;
+    font-size: larger;
+}
+
+
+
+.contact2 {
+    background-color: #f6deeb;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: 0px 10px 0px 0px black;
+    top: 280px;
+    left: 20px;
+    justify-content: center;
+}
+.contact-btn2:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px black;
+}
+.contact-btn2 {
+    width: 120px;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+    color: #000000;
+    padding: 10px 20px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0px 0px black;
+}
+.call2 {
+    width: 10000px;
+    top: 150px;
+    position: relative;
+    left: 60px;
+    font-size:large;
+}
+.loc2 {
+    text-align: justify;
+    width: 10000px;
+    top: 210px;
+    position: relative;
+    right:130px;
+    font-size: larger;
+}
+
+.contact3 {
+    background-color: #f6deeb;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: 0px 10px 0px 0px black;
+    top: 280px;
+    left: 40px;
+    justify-content: center;
+}
+.contact-btn3:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px black;
+}
+.contact-btn3 {
+    width: 120px;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+    color: #000000;
+    padding: 10px 20px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0px 0px black;
+}
+.call3 {
+    width: 10000px;
+    top: 150px;
+    position: relative;
+    left: 60px;
+    font-size:large;
+}
+.loc3 {
+    text-align: justify;
+    width: 10000px;
+    top: 210px;
+    position: relative;
+    right:130px;
+    font-size: larger;
+}
+
+footer {
+    width: 100%;
+    height: 300px;
+    border: 0px solid;
+    border-left: 0px solid;
+    border-right: 0px solid;
+    border-top: 2px solid black;
+}
+.footer nav {
+    margin:0;
+    padding: 0;
+}
+.container-footer {
+    width: 900px;
+    height: 300px;
+    float: right;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+ul {
+    list-style: none;
+}
+.footer-content {
+    padding: 40px 40px;
+}
+.footer-content h4{
+    font-weight:bold;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.footer-content ul li {
+    margin-bottom: 8px;
+}
+.footer-content ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+.logo-footer {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 20px;
+    top: 1500px;
+}
+.ig-footer {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 30px;
+    top: 1620px;
+}
+.gform-footer {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 60px;
+    top: 1620px;
+}
+.ngl-footer {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 90px;
+    top: 1620px;
+}
+.f-footer {
+    display: flex;
+    width: max-content;
+    position: absolute;
+    left: 100px;
+    top: 3150px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="Logo">
+            <a href="index.html"><img src="asset/ALMA.png" class="logo"/></a>
+          </div>
+            <li class="navbar-content">Contact</li>
+        </nav>
+    </header>
+
+    <main>
+      <div class="intro">
+        <ul>
+          <li>Do you need help?</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="contact">
+          <button class="contact-btn" id="contact-btn" onclick="location.href='https://www.instagram.com/alma_eunoia'">Contact</button>
+          <a href="https://www.instagram.com/alma_eunoia"><ig class="fa-brands fa-instagram fa-3x"></ig></a>
+          <ig class="ig">@alma_eunoia</ig>
+          <loc class="fa-solid fa-location-dot fa-3x"></loc>
+          <loc class="loc">Jl. Dr. Ir. H. Soekarno, Mulyorejo, Kec. Mulyorejo, Surabaya, Jawa Timur 60115</l>
+        </div>
+      </div>
+
+      <div class="section2">
+        <ul>
+          <li>Emergency</li></ul>
+
+          <div class="content">
+        <div class="contact1">
+          <button class="contact-btn1" id="contact-btn1" onclick="location.href='https://www.instagram.com/hc_airlangga_peduli'">Help Center UNAIR</button>
+          <call class="fa-solid fa-phone fa-2x"></call>
+          <call class="call1">+62 816-1550-7016</call>
+          <loc class="fa-solid fa-location-dot fa-2x"></loc>
+          <loc class="loc1">Kampus B Unair, Jl. Airlangga, Airlangga, Kec. Gubeng, ASEEC Tower, Lantai 11, Surabaya, Jawa Timur, Indonesia, 60286</l>
+        </div>
+        <div class="contact2">
+          <button class="contact-btn2" id="contact-btn2" onclick="location.href='https://rsjmenur.jatimprov.go.id/'">RSJ Menur</button>
+          <call class="fa-solid fa-phone fa-2x"></call>
+          <call class="call2">+62 8113633120</call>
+          <loc class="fa-solid fa-location-dot fa-2x"></loc>
+          <loc class="loc2">Jl. Raya Menur No.120, Kertajaya, Kec. Gubeng, Surabaya, Jawa Timur 60282</l>
+        </div>
+        <div class="contact3">
+          <button class="contact-btn3" id="contact-btn3" onclick="location.href='https://plp.untag-sby.ac.id/'">Pusat Layanan Psikologi Surabaya</button>
+          <call class="fa-solid fa-phone fa-2x"></call>
+          <call class="call3">+62 85163080233</call>
+          <loc class="fa-solid fa-location-dot fa-2x"></loc>
+          <loc class="loc3">JL. Dinoyo, No. 42-44, Keputran, Kec. Tegalsari, Surabaya, Jawa Timur 60265</l>
+        </div>
+      </div>
+      </div>
+    </main>
+
+    <footer>
+      <nav class="footer-nav">
+        <div class="container-footer">
+            <div class="logo-footer">
+              <a class="logo-footer" href=""><img src="asset/ALMA.png"></a>
+            </div>
+            <span class="f-footer">Follow Us</span>
+            <div class="ig-footer">
+              <a class="ig-footer" href="https://www.instagram.com/alma_eunoia"><img src="asset/ig.png"></a>
+            </div>
+            <div class="gform-footer">
+              <a class="gform-footer" href="https://forms.gle/AgUtjiv2Yz7AM9D27"><img src="asset/gform.png"></a>
+            </div>
+            <div class="ngl-footer">
+              <a class="ngl-footer" href="https://ngl.link/alma_eunoia"><img src="asset/ngl.png"></a>
+            </div>
+  
+  
+        <div class="row">
+  
+        <div class="footer-content">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="Dashboard.html">Dashboard</a></li>
+            <li><a href="Assistant.html">Assistant</a></li>
+            <li><a href="Treatment.html">Treatment</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-content">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="">Mood Tracker</a></li>
+            <li><a href="">Journaling</a></li>
+            <li><a href="">Treatment</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-content">
+          <h4>About</h4>
+          <ul>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Cookies Policy</a></li>
+            <li><a href="">Terms of Use</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-content">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="">Emergency</a></li>
+          </ul>
+        </div>
+  
+        <c>Airlangga Mood and Life Assistant ©2024 - All Right Reserved</c>
+          </div>
+        </div>
+      </div>
+      </nav>
+    </footer>
+    
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '67566a6831b5b3f31cd01b32' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+</body>
+</html>
