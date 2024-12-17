@@ -8,75 +8,134 @@
 }
 
 
-header {
-    width: 100%;
-    height: 100px;
-    border: 2px solid black;
-    border-left: 0px solid;
-    border-right: 0px solid;
-    border-top: 0px solid;
-}
-.navbar {
-    margin:0 auto;
-}
-.Logo {
-    display: flex;
-    width: 250px;
-    height: 100px;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-}
-.logo {
-    width: 150px;
-    display: flex;
+/* Header Styling */
+header { 
+    width: 100%; 
+    height: 100px; 
+    border-bottom: 2px solid black;  
+    position: relative; 
 }
 
-.Menu {
+/* Navigation Bar */
+.navbar { 
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
     height: 100px;
-}
-.Menu-content {
-    height: 100px;
+    padding: 0 10px;
     align-content: center;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
-.Menu-item {
-    color: #000000;
-    padding: 40px;
-    text-decoration: none;
+
+/* Logo Styling */
+.Logo {
+    display: flex;
+    width: 250px;
+    height: 100px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
-.Menu a:hover {
-    text-decoration:underline;
+.logo { 
+    width: 150px; 
+    display: flex; 
 }
 
-.btn-sign-up {
-    width: 120px;
-    background-color: transparent;
-    position: absolute;
-    float: right;
-    right: 185px;
-    top: 25px;
-    cursor: pointer;
-    color: #000000;
-    padding: 10px 20px;
-    margin: 4px 2px;
-    border-radius: 30px;
-    box-shadow: 5px 5px 0px 0px black;
+/* Menu Styling */
+.Menu { 
+    height: 100px; 
+    display: flex; 
+    align-items: center; 
 }
-.btn-sign-in {
-    width: 120px;
-    background-color: transparent;
-    position: absolute;
-    right: 50px;
-    top: 25px;
-    cursor: pointer;
-    color: #000000;
-    padding: 10px 20px;
-    margin: 4px 2px;
-    border-radius: 30px;
-    box-shadow: 5px 5px 0px 0px black;
+
+.Menu-content { 
+    height: 100px; 
+    display: flex; 
+    align-items: center; 
+    text-align: center;
+}
+
+.Menu-item { 
+    color: #000000; 
+    padding: 10px 15px; 
+    text-decoration: none; 
+    font-size: 16px;
+}
+.Menu a:hover { 
+    text-decoration: underline; 
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 5px;
+    }
+
+    .Logo {
+        width: 90px;
+        height: 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .Menu-item { 
+        padding: 5px 8px; 
+        font-size: 12px; 
+    }
+
+}
+
+/* RESPONSIVE DESIGN FOR TABLETS */
+@media (max-width: 1024px) and (min-width: 768px) {
+    header {
+        height: 80px; /* Reduce header height */
+    }
+
+    .navbar {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .Logo {
+        width: 160px; /* Reduce logo size */
+        height: 70px;
+    }
+
+    .logo {
+        width: 110px; /* Scale down the logo */
+    }
+
+    .Menu-item { 
+        padding: 8px 10px; /* Reduce spacing */
+        font-size: 14px; 
+    }
+}
+
+/* SMALL TABLETS OR LARGE MOBILE SCREENS */
+@media (max-width: 768px) {
+    header {
+        height: 80px;
+    }
+
+    .navbar {
+        padding: 0 10px; 
+    }
+
+    .Logo {
+        width: 120px;
+        height: 40px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .Menu-item { 
+        font-size: 10px; 
+        padding: 6px 8px;
+    }
 }
 
 
@@ -94,73 +153,113 @@ header {
     font-size: 20px;
     word-spacing: 5px;
 }
-.happy {
+/* Common Styling for Emotion Classes */
+.happy, .sad, .scare, .shock, .angry, .disgust {
     width: 150px;
     height: 150px;
     margin: 30px;
     position: relative;
     border-radius: 50%;
-    background-image: url(asset/happy.png);
     background-size: cover;
     cursor: pointer;
+}
+
+/* Individual Background Images */
+.happy {
+    background-image: url(asset/happy.png);
 }
 .sad {
-    width: 150px;
-    height: 150px;
-    margin: 30px;
-    position: relative;
-    border-radius: 50%;
     background-image: url(asset/sad.png);
-    background-size: cover;
-    cursor: pointer;
 }
 .scare {
-    width: 150px;
-    height: 150px;
-    margin: 30px;
-    position: relative;
-    border-radius: 50%;
     background-image: url(asset/scare.png);
-    background-size: cover;
-    cursor: pointer;
 }
 .shock {
-    width: 150px;
-    height: 150px;
-    margin: 30px;
-    position: relative;
-    border-radius: 50%;
     background-image: url(asset/shock.png);
-    background-size: cover;
-    cursor: pointer;
 }
 .angry {
-    width: 150px;
-    height: 150px;
-    margin: 30px;
-    position: relative;
-    border-radius: 50%;
     background-image: url(asset/angry.png);
-    background-size: cover;
-    cursor: pointer;
 }
 .disgust {
-    width: 150px;
-    height: 150px;
-    margin: 30px;
-    position: relative;
-    border-radius: 50%;
     background-image: url(asset/disgust.png);
-    background-size: cover;
-    cursor: pointer;
 }
+
+/* Emotion Container */
 .emotion {
     width: 100%;
     position: absolute;
-    justify-content: center;
-    top: 400px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    top: 400px;
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    
+    .happy, .sad, .scare, .shock, .angry, .disgust {
+        width: 100px; /* Reduce size for mobile */
+        height: 100px;
+        margin: 15px; /* Reduce margin */
+    }
+
+    .emotion {
+        top: 300px; /* Adjust container position */
+        flex-wrap: wrap;
+    }
+    .happyform, .sadform, .scareform, .shockform, .angryform, .disgustform {
+        width: 60%; /* Take 90% width */
+        height: auto; /* Adjust height dynamically */
+        padding: 15px;
+        box-shadow: 10px 12px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn_happyform, .btn_sadform, .btn_scareform, .btn_shockform, .btn_angryform, .btn_disgustform {
+        width: 40px;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .navhappyform, .navsadform, .navscareform, .navshockform, .navangryform, .navdisgustform {
+        font-size: 14px; /* Reduce text size slightly */
+    }
+}
+
+@media (max-width: 480px) {
+    .intro ul li {
+        top: 50px; /* Minimal top spacing */
+        font-size: 14px; /* Even smaller font */
+        word-spacing: 2px;
+    }
+
+    .happy, .sad, .scare, .shock, .angry, .disgust {
+        width: 80px; /* Further reduce size for very small devices */
+        height: 80px;
+        margin: 10px; /* Smaller margin */
+    }
+
+    .emotion {
+        top: 250px; /* Adjust container position for small screens */
+    }
+    .happyform, .sadform, .scareform, .shockform, .angryform, .disgustform {
+        width: 50px; /* Almost full width */
+        height: 30px;
+        padding: 10px;
+        box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .btn_happyform, .btn_sadform, .btn_scareform, .btn_shockform, .btn_angryform, .btn_disgustform {
+        width: 20px;
+        height: 20px;
+        font-size: 8px;
+    }
+
+    .navhappyform, .navsadform, .navscareform, .navshockform, .navangryform, .navdisgustform {
+        font-size: 12px; /* Further reduce text size */
+    }
+}
+
 .happyform {
     display: none;
     justify-content: center;
@@ -579,7 +678,7 @@ header {
 
 
 
-footer {
+.footer {
     width: 100%;
     height: 300px;
     border: 0px solid;
@@ -657,5 +756,67 @@ ul {
     position: absolute;
     left: 100px;
     top: 2500px;
+}
+/* Responsive Design for 480px screen width */
+@media (max-width: 480px) {
+    .footer {
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .container-footer {
+        width: 100%; /* Full width for mobile devices */
+        height: auto; /* Auto height adjustment */
+        padding: 10px; /* Reduce padding for smaller screens */
+        box-sizing: border-box;
+    }
+
+    .row {
+       
+        padding: 10px;
+    }
+
+    .footer-content {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .footer-content h4 {
+        font-size: 16px; /* Reduce font size for mobile */
+        margin-bottom: 15px;
+    }
+
+    .footer-content ul li {
+        margin-bottom: 5px; /* Adjust margin for list items */
+    }
+
+    .footer-content ul li a {
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+
+    .logo-footer {
+        width: 120px; /* Adjust logo size */
+        height: 120px;
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 10px auto; /* Center logo in the footer */
+    }
+
+    .ig-footer, .gform-footer, .ngl-footer {
+        width: 25px; /* Scale down icons */
+        height: 25px;
+        margin: 5px auto; /* Center social media icons */
+        position: relative;
+        display:flex;
+        top: 0;
+    }
+
+    .f-footer {
+        font-size: 14px; /* Reduce font size */
+        text-align: center;
+        margin-top: 10px;
+    }
+    .c{
+        font-size:10px
+    }
 }
 
